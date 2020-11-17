@@ -10,7 +10,9 @@
             <h1>Covid-19</h1>
             <form action="/filtrar" method="POST">
                 <label for="ciudad">Ciudad:</label>
-                <input id="ciudad" type="text" name="ciudad" onkeyup="this.value = this.value.toUpperCase();">
+                <input id="ciudad" type="text" name="ciudad" onkeyup="this.value = this.value.toUpperCase();"><br>
+                <label for="fecha">Fecha:</label>&nbsp;&nbsp;
+                <input id="fecha" type="date" name="fecha" min="2020-01-01" max="2020-12-01"><br>
                 <input type="submit" value="Filtrar">
             </form>
         </div>
