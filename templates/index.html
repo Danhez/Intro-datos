@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+    <!--<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">-->
+    <head>
+        <meta charset="UTF-8">
+        <title>Covid</title>
+    </head>
+    <body>
+        <div id="input">
+            <h1>Covid-19</h1>
+            <form action="/filtrar" method="POST">
+                <label for="ciudad">Ciudad:</label>
+                <input id="ciudad" type="text" name="ciudad" onkeyup="this.value = this.value.toUpperCase();">
+                <input type="submit" value="Filtrar">
+            </form>
+        </div>
+        <div id="contenido">
+            {{datos|safe}}
+        </div>
+        </body>
+</html>
