@@ -27,6 +27,9 @@ def filtrar():
         elif request.form['ciudad'] != '' and request.form['fecha'] == '':
             return render_template('index.html', datos=cdf[cdf['ciudad_municipio_nom'] == request.form['ciudad']].to_html())
 
+        elif request.form['fecha'] != '' and request.form['ciudad'] == '':
+            return render_template('index.html', datos=cdf[cdf['fecha_de_notificaci_n'] == request.form['fecha']].to_html())
+
         else:
             return redirect(url_for('index'))
 
