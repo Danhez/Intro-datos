@@ -6,15 +6,22 @@
         <title>Covid</title>
     </head>
     <body>
-        <div id="input">
+        <div id="input" style="width: 100%; overflow: hidden;">
             <h1>Covid-19</h1>
-            <form action="/filtrar" method="POST">
-                <label for="ciudad">Ciudad:</label>
-                <input id="ciudad" type="text" name="ciudad" onkeyup="this.value = this.value.toUpperCase();"><br>
-                <label for="fecha">Fecha:</label>&nbsp;&nbsp;
-                <input id="fecha" type="date" name="fecha" value="" min="2020-03-01" max="2020-12-01"><br>
-                <input type="submit" value="Filtrar">
-            </form>
+            <div id="filtrado" style="width: 600px; float: left;">
+                <form action="/filtrar" method="POST">
+                    <label for="ciudad">Ciudad:</label>
+                    <input id="ciudad" type="text" name="ciudad" onkeyup="this.value = this.value.toUpperCase();"><br>
+                    <label for="fecha">Fecha:</label>&nbsp;&nbsp;
+                    <input id="fecha" type="date" name="fecha" value="" min="2020-03-01" max="2020-12-01"><br>
+                    <input type="submit" value="Filtrar">
+                </form>
+            </div>
+            <div id="info" style="margin-left: 620px;">
+                <h3>Info:</h3>
+                <a href="/grupoC"><button>Casos por ciudad</button></a>
+                <a href="/grupoF"><button>Casos por fecha</button></a>
+            </div>
         </div>
         <div id="contenido">
             {{datos|safe}}
